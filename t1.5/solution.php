@@ -13,7 +13,7 @@ function getInitials(string $FIO): ?string {
   //var_dump($words);
   $ret = $words[0].' ';
   foreach(array_slice($words,1) as $value) {
-    $ret .= $value[0].$value[1].".";
+    $ret .= mb_substr($value, 0, 1).".";
   }
   return $ret;
 }
