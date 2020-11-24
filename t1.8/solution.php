@@ -1,5 +1,7 @@
 <?php
 function substitute(string $sourceString, array $dictionary): string {
+  if(!is_string($sourceString))
+    return "INPUT ERROR";
   foreach ($dictionary as $key => $value) {
     $sourceString = mb_ereg_replace($key, '$value', $sourceString, "ignoreCase");
   }
@@ -19,4 +21,5 @@ if ($argv && $argv[0] && realpath($argv[0]) === __FILE__) {
   } catch (TypeError $e) {
     echo "INPUT ERROR";
   }
+  echo empty(substitute("", []));
 }
