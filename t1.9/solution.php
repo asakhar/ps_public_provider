@@ -35,4 +35,3 @@ function removeSymbols(...$params) {
   }
   return $result;
 }
-echo inverseConcat("123", 1);
