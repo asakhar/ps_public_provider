@@ -5,7 +5,6 @@ function inverseConcat(...$params) {
     if (!is_string($param)) {
       throw new TypeError;
     }
-
     $result = mb_convert_case($param, MB_CASE_LOWER, "UTF-8") . (empty($result) ? "" : " ") . $result;
   }
   if (empty($result)) {
