@@ -4,6 +4,8 @@ class ClassBuffer {
   private int $n;
   private int $csize;
   function __construct(int $size) {
+    if($size <= 0 || !is_integer($size))
+      throw new TypeError;
     $this->container = array_fill(0, $size, 0);
     $this->n = $size;
     $this->csize = 0;
